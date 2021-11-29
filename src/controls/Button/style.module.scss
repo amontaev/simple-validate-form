@@ -1,0 +1,23 @@
+.button {
+    background: #0880AE;
+    color:#EBF4F8;
+    border:0;
+    box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08), 0px 4px 8px rgba(44, 39, 56, 0.08);
+    border-radius: 6px;
+    padding:18px 65px 17px 65px;
+    transition: .2s;
+    cursor:pointer;
+}
+.button:hover {
+    box-shadow: 0px 12px 24px rgba(44, 39, 56, 0.08), 0px 24px 48px rgba(44, 39, 56, 0.16);
+}
+.button:active {
+    outline:2px solid #2C2738DB;
+    outline-offset: -2px;
+}
+.button:disabled {
+    background: #DBE2EA;
+    color:#2C2738;
+    box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.08);
+    border-radius: 6px;
+}
