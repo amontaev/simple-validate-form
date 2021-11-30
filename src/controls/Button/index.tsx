@@ -1,8 +1,12 @@
 import React from 'react'
 import style from './style.module.scss'
 
-const Button:React.FC = props => {
-    return (<button type="button" className={style.button} >{props.children}</button>)
+interface ButtonProps {
+    disabled?:boolean
+}
+
+const Button:React.FC<ButtonProps> = props => {
+    return (<button type="button" className={style.button} disabled={props.disabled}>{props.children}</button>)
 }
 
 export default Button
