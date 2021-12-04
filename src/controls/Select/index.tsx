@@ -5,10 +5,11 @@ interface SelectProps {
     options:Array<string>
 }
 
-const Select:React.FC<SelectProps> = props => {
+const Select:React.FC<SelectProps> = ({options}) => {
 
     const [current, setCurrent] = useState("Нет данных")
     const [toggle, setToggle] = useState(false)
+    
 
     const handleCurrent = (item:string) => {
         setCurrent(item)
@@ -16,10 +17,10 @@ const Select:React.FC<SelectProps> = props => {
     }
 
     useEffect(()=>{
-        if(props.options.length>0) {
-            setCurrent(props.options[0])
+        if(options.length>0) {
+            setCurrent(options[0])
         }
-    },[props.options])
+    },[options])
 
     return (
         <div className={style.container}>
@@ -30,7 +31,7 @@ const Select:React.FC<SelectProps> = props => {
             {toggle && <div className={style.dropdown}>
                 <ul>
                     {
-                        props.options.map((item: string, index: number)=>
+                        options.map((item: string, index: number)=>
                             <li key={index} onClick={()=>handleCurrent(item)}>{item}</li>
                         )
                     }

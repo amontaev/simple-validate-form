@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ResourceService from './api/FakeApi';
 import './App.css';
 import Description from './component/Description';
 import Form from './component/Form';
@@ -16,13 +17,15 @@ import { useInput } from './hooks/useInput';
 
 function App() {
 
-  const languages = ["Русский","Английский","Китайский", "Испанский"]
-
   const inputName = useInput("",{isEmpty:true, isName:true})
   const inputEmail = useInput("",{isEmpty:true, isEmail:true})
   const inputPhone = useInput("",{isEmpty:true, isPhone:true})
-
+  const [dropdownList, setDropdownList] = useState<Array<string>>([])
   const [checked, setChecked] = useState(false)
+
+  useEffect(()=>{
+    setDropdownList(ResourceService.getLanguages())
+  },[])
 
   return (
     <Form>
@@ -49,7 +52,7 @@ function App() {
       </Place>
       <Place>
         <Label>Язык</Label>
-        <Select options={languages}/>
+        <Select options={dropdownList}/>
       </Place>
       <Global>
         <Description>
@@ -60,7 +63,6 @@ function App() {
         <Button disabled={!(inputName.valid && inputEmail.valid && inputPhone.valid && checked)}>Зарегистрироваться</Button>
       </Place>
     </Form>
-  );
+  )
 }
-
 export default App;
