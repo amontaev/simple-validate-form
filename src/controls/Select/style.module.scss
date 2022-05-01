@@ -11,12 +11,25 @@ $radius:6px;
     box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
     font-size: 16px;
     cursor: pointer;
+    transition: .2s;
+
+    &__arrow {
+        width:8px;
+        height:8px;
+        pointer-events: none;
+        border: 1px solid #0880AE;
+        border-width: 0 2px 2px 0;
+        padding: 5px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
 }
 .select.toggle{
     border:1px solid #0880AE;
 }
 .dropdown {
     position: relative;
+    animation: showDropdown .2s;
     ul {
         list-style: none;
         position: absolute;
@@ -33,19 +46,15 @@ $radius:6px;
         padding:12px 0 12px 15px;
         color:#756F86;
         cursor:pointer;
+        transition: .2s;
     }
     ul li:hover {
         border-radius: $radius;
         background-color: #EBF4F8;
     }
 }
-.arrow{
-    width:8px;
-    height:8px;
-    pointer-events: none;
-    border: 1px solid #0880AE;
-    border-width: 0 2px 2px 0;
-    padding: 5px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+
+@keyframes showDropdown {
+    from {top:-100%;}
+    to {top:0;}
 }

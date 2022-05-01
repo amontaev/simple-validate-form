@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ResourceService from './api/FakeApi';
 import './App.css';
-import Description from './component/Description';
-import Form from './component/Form';
-import Global from './component/Global';
-import Label from './component/Label';
-import Link from './component/Link';
-import MessageError from './component/MessageError';
-import Place from './component/Place';
-import Title from './component/Title';
+import Description from './components/Description';
+import Form from './components/Form';
+import Global from './components/Global';
+import Label from './components/Label';
+import Link from './components/Link';
+import MessageError from './components/MessageError';
+import Place from './components/Place';
+import Title from './components/Title';
 import Button from './controls/Button';
 import CheckBox from './controls/CheckBox';
 import Select from './controls/Select';
@@ -65,4 +65,5 @@ function App() {
     </Form>
   )
 }
+
 export default App;

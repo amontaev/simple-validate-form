@@ -25,18 +25,21 @@ const Select:React.FC<SelectProps> = ({options}) => {
     return (
         <div className={style.container}>
             <div className={[style.select, toggle && style.toggle].join(" ")} onClick={()=>setToggle(prev=>!prev)}>
-                <div className={style.input}>{current}</div>
-                <div className={style.arrow}></div>
+                <div>{current}</div>
+                <div className={style.select__arrow}></div>
             </div>
-            {toggle && <div className={style.dropdown}>
-                <ul>
-                    {
-                        options.map((item: string, index: number)=>
-                            <li key={index} onClick={()=>handleCurrent(item)}>{item}</li>
-                        )
-                    }
-                </ul>
-            </div>}
+            {
+                toggle && 
+                <div className={style.dropdown}>
+                    <ul>
+                        {
+                            options.map((item: string, index: number)=>
+                                <li key={index} onClick={()=>handleCurrent(item)}>{item}</li>
+                            )
+                        }
+                    </ul>
+                </div>
+            }
         </div>
     )
 }
