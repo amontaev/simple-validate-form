@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import ResourceService from './api/FakeApi';
-import './App.css';
-import Description from './components/Description';
-import Form from './components/Form';
-import Global from './components/Global';
-import Label from './components/Label';
-import Link from './components/Link';
-import MessageError from './components/MessageError';
-import Place from './components/Place';
-import Title from './components/Title';
-import Button from './controls/Button';
-import CheckBox from './controls/CheckBox';
-import Select from './controls/Select';
-import TextField from './controls/TextField';
-import { useInput } from './hooks/useInput';
+import ResourceService from '../../shared/api/fake-api';
+import Description from '../../shared/components/description';
+import Form from '../../shared/components/form';
+import Global from '../../shared/components/global';
+import Label from '../../shared/components/label';
+import Link from '../../shared/components/link';
+import MessageError from '../../shared/components/message-error';
+import Place from '../../shared/components/place';
+import Title from '../../shared/components/title';
+import Button from '../../shared/ui/button';
+import CheckBox from '../../shared/ui/check-box';
+import Select from '../../shared/ui/select';
+import { useInput } from '../../shared/hooks/use-input';
+import TextField from '../../shared/ui/text-field';
 
-function App() {
+const RegistrationPage:React.FC = props => {
 
   const inputName = useInput("",{isEmpty:true, isName:true})
   const inputEmail = useInput("",{isEmpty:true, isEmail:true})
@@ -66,4 +65,4 @@ function App() {
   )
 }
 
-export default App;
+export default RegistrationPage;

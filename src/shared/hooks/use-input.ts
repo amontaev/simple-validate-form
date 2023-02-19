@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useValidate } from "./useValidate"
+import { useValidate } from "./use-validate"
 
 export const useInput = (startValue:string, validations:any) => {
     const [value, setValue] = useState(startValue)
